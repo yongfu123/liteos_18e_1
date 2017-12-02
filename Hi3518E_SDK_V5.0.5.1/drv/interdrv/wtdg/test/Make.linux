@@ -1,0 +1,15 @@
+
+# target source
+OBJS  := $(SRCS:%.c=%.o)
+
+.PHONY : clean all
+
+all: $(TARGET)
+
+
+$(TARGET):$(OBJS)
+	$(CC) $(CFLAGS) -o $@ $^
+
+clean:
+	@rm -f $(TARGET)
+	@rm -f $(OBJS)

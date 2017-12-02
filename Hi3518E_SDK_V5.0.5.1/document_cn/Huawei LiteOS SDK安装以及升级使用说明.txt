@@ -1,0 +1,193 @@
+Huawei LiteOS SDK安装以及升级使用说明
+
+注意：本文描述的Hi35xx指的是Hi3516A/Hi3516D/Hi3518EV200/Hi3519V100/Hi3516CV300其中的一款芯片
+
+
+第一章 Hi35xx_SDK_Vx.x.x.x版本升级操作说明
+   如果您是首次安装本SDK，请直接参看第2章。
+    
+第二章 首次安装SDK
+1、Hi35xx SDK包位置
+    在"Hi35xx_V100R00*C0*SPC***/01.software/board"目录下，您可以看到一个 Hi35xx_SDK_Vx.x.x.x.tgz 的文件，
+该文件就是Hi35xx的软件开发包。
+
+2、解压缩SDK包
+    在linux服务器上（或者一台装有linux的PC上，主流的linux发行版本均可以），使用命令：tar -zxf Hi35xx_SDK_Vx.x.x.x.tgz ，
+解压缩该文件，可以得到一个Hi35xx_SDK_Vx.x.x.x目录。
+
+3、展开SDK包内容
+    返回Hi35xx_SDK_Vx.x.x.x目录，运行./sdk.unpack(请用root或sudo权限执行)将会展开SDK包打包压缩存放的内容，请按照提示完成操作。
+如果您需要通过WINDOWS操作系统中转拷贝SDK包，请先运行./sdk.cleanup，收起SDK包的内容，拷贝到新的目录后再展开。
+
+4、在linux服务器上安装交叉编译器
+    1）安装uclibc交叉编译器（注意，需要有sudo权限或者root权限）：
+       进入Hi35xx_SDK_Vx.x.x.x/osdrv/toolchain目录，运行chmod +x cross.install，然后运行./cross.install即可。
+    2) 执行source /etc/profile， 安装交叉编译器的脚本配置的环境变量就可以生效了，或者请重新登陆也可。
+
+5、编译osdrv
+    参见osdrv目录下readme
+
+6、SDK目录介绍
+Hi35xx_SDK_Vx.x.x.x 目录结构如下：    
+    |-- sdk.cleanup                 # SDK清理脚本
+    |-- sdk.unpack                  # SDK展开脚本
+    |-- osdrv                       # 存放操作系统及相关驱动的目录
+    |   |-- opensource              # opensource源代码
+    |   |   |-- liteos              # Huawei LiteOS内核源代码
+    |   |   |-- u-boot              # uboot源代码
+    |   |-- toolchain               # 交叉编译器
+    |   |-- pub                     # 编译好的镜像、工具、drv驱动等
+    |   |-- tools                   # Huawei LiteOS工具源代码	
+    |   |-- readme_cn.txt           # osdrv使用说明（中文版）
+    |   |-- readme_en.txt           # osdrv使用说明（英文版）
+    |   |-- ......                  #
+    |   |-- Makefile                # osdrv Makefile
+    |-- package                     # 存放SDK各种压缩包的目录
+    |   |-- osdrv.tgz               # Huawei LiteOS osdrv源码压缩包
+    |	|-- mpp.tgz                 # 媒体处理平台软件压缩包
+    |   |-- drv.tgz                 # drv压缩包
+    |   |-- boot                    # 可供FLASH烧写的映像文件
+    |-- scripts                     # 存放shell脚本的目录
+    |-- drv                         # drv目录
+        |-- extdrv                  # 板级外围驱动源代码
+        |-- interdrv                # 芯片级驱动源代码
+    |-- osal                        # osal适配层目录
+        |-- include                 # 对外头文件
+        |-- source                  # 源代码
+    |-- mpp                         # 存放媒体处理平台的目录
+        |-- component               # 组件源代码 	
+        |-- include                 # 对外头文件	
+        |-- init                    # sdk_init.c源文件
+        |-- lib                     # release版本库以及音频库
+        |-- HuaweiLite.param        # Huawei LiteOS编译选项 
+        |-- Makefile.param          # mpp全局编译选项 
+        |-- tools                   # 媒体处理相关工具
+        |-- sample                  # 样例源代码
+注：在编译sample之前请先编译liteos内核。
+
+
+第三章、安装、升级Hi35xxDEMO板开发环境
+    # 如果您使用的Hi35xx的DEMO板，可以按照以下步骤烧写u-boot，用户程序bin文件以及文件系统，以下步骤均使用网络来更新。
+    # 通常，您拿到的单板中已经有u-boot，如果没有的话，就需要使用HiTool进行烧写。
+    # 更详细的操作步骤及说明，请参见01.software\pc\HiTool目录下的《HiBurn 工具使用指南.pdf》。
+    # 以下操作假设您的单板上已经有u-boot,使用网口烧写uboot、程序bin文件到Flash中。
+    # Demo单板默认为从SPI Flash启动。
+
+1、配置tftp服务器
+    # 可以使用任意的tftp服务器，将package/boot下的相关文件，以及mpp/sample程序生成的bin文件拷贝到tftp服务器目录下。
+    
+2、参数配置
+    # 单板上电后，敲任意键进入u-boot。设置serverip（即tftp服务器的ip）、ipaddr（单板ip）和ethaddr（单板的MAC地址）等。使用方式如下：
+    setenv serverip xx.xx.xx.xx
+    setenv ipaddr xx.xx.xx.xx 
+    setenv ethaddr xx:xx:xx:xx:xx:xx
+    setenv netmask xx.xx.xx.xx
+    setenv gatewayip xx.xx.xx.xx
+    ping serverip，确保网络畅通。
+
+3、烧写映像文件到NAND Flash		
+   以64M NAND Flash为例。
+    1）地址空间说明
+        |      1M       |      7M       |     56M     |
+        |---------------|---------------|-------------|
+        |     boot      |   sample_xxx  |     yaffs2  |
+
+        以下的操作均基于图示的地址空间分配，您也可以根据实际情况进行调整。
+    2）烧写u-boot
+        mw.b 0x82000000 0xff 0x100000
+        tftp 0x82000000 u-boot-Hi35xx.bin
+        nand erase 0x0 0x80000
+        nand write 0x82000000 0x0 0x80000
+        reset
+    3）烧写bin
+        mw.b 0x82000000 0xff 0x700000
+        tftp 0x82000000 sample_xxx.bin
+        nand erase 0x100000 0x700000
+        nand write 0x82000000 0x100000 0x700000
+        setenv bootcmd 'nand read 0x80100000 0x100000 0x700000; go 0x80100000'
+        saveenv
+        （以上命令是烧写到nand flash中，并设置从nand启动，调试时也可以直接烧写到内存，从内存启动：
+        tftp 0x80100000 sample.bin;go 0x80100000 ）
+        注意：0x80100000为OS固定的启动地址，不能修改。由于目前u-boot的运行地址是0x80800000,如果sample_xxx.bin超过7M，
+	则需要把u-boot运行地址往后移,否则sample_xxx.bin会覆盖u-boot，导致u-boot无法运行。
+    4)烧写文件系统
+        用户可以自行生成yaffs2或jffs2文件系统，具体方法请参考《Hi35xx Huawei LiteOS开发环境用户指南.pdf》。
+	注意如果自行烧写文件系统，需要根据烧写地址同步修改app_init.c文件中的mount位置，并设置相应的根目录。
+    5）设置启动参数
+	无
+	
+    以16M SPI Flash为例
+     1）地址空间说明
+        |      1M       |      7M       |     8M      |
+        |---------------|---------------|-------------|
+        |     boot      |   sample_xxx  |     jffs2   |
+
+        以下的操作均基于图示的地址空间分配，您也可以根据实际情况进行调整。
+    2）烧写u-boot
+        mw.b 0x82000000 0xff 0x100000
+        tftp 0x82000000 u-boot-Hi35xx.bin
+	sf probe 0;
+	sf erase 0x0 0x80000;
+	sf write 0x82000000 0x0 0x80000
+        reset
+    3）烧写bin
+        mw.b 0x82000000 0xff 0x700000
+        tftp 0x82000000 sample_xxx.bin
+	sf probe 0;
+        sf erase 0x100000 0x700000
+        sf write 0x82000000 0x100000 0x700000
+        setenv bootcmd 'sf probe 0;sf read 0x80100000 0x100000 0x700000; go 0x80100000'
+        saveenv
+		
+4、启动新系统
+    reset	# 重启进入新系统。
+
+第四章、开发前环境准备
+
+1、管脚复用
+    与媒体业务相关的管脚复用都在mpp/ko目录下的sdk_init.c中配置，如果与实际情况不符请直接修改；
+    mpp之外的其他管脚复用统一在uboot中配置，详细说明请参见《U-boot移植应用开发指南》。
+    
+第五章、使用SDK和DEMO板进行开发
+1、开启Huawei LiteOS下的网络
+    # 设置网络(设置之前请在程序中调用网络的初始化代码tcpip_init(), higmac_init(), netif_set_up())
+    ifconfig eth0 hw ether xx:xx:xx:xx:xx:xx;
+    ifconfig eth0 xx.xx.xx.xx netmask xx.xx.xx.xx;
+    ifconfig eth0 gateway xx.xx.xx.xx
+    # 然后ping一下其他机器，如无意外，网络将能正常工作。
+
+2、使用NFS文件系统进行开发
+    # 在开发阶段，推荐使用NFS作为开发环境，可以省去重新制作和烧写文件系统的工作。
+    # 挂载NFS文件系统的操作命令：
+    mount IP:PATH /nfs nfs
+    # 然后就可以在/nfs目录下访问服务器上的文件，并进行开发工作。
+
+3、运行MPP业务
+    MPP业务和Huawei LiteOS一起生成烧到单板的sample_xxx.bin文件，详细流程请参考sample代码。
+    如果需要配置网络、NFS之后再运行sample，可以把sample里面调用app_main的操作修改成shell命令, 比如shell命令为“sample”，等配置完网络后，再手动执行sample命令。
+    
+4、替换sensor
+   #如果需要替换sample代码中的sensor，要修改2个地方：
+   #1. sdk_init.c中sensor_type的值；
+   #2. sample下面的Makefile.param中的SENSOR_TYPE值；
+    
+第六章 地址空间分配与使用
+1、DDR内存管理说明
+    1）所有DDR内存中，一部分由操作系统管理，称为OS内存；一部分属于USB内存；还有一部分由MMZ模块管理，供媒体业务单独使用，称为MMZ内存。
+    2）OS的管理内存默认占用64M空间，USB内存一般占用128K或1M，其它为MMZ内存。OS的管理内存的起始地址为0x80000000，USB内存起始地址和MMZ起始地址依据其大小依次增加，这3个启动地址可以根据客户的场景业务修改。
+    3）MMZ内存由MMZ内核模块管理，mmz模块初始化时，通过参数指定其大小。
+    4）请注意MMZ内存地址范围不能与OS内存和USB内存重叠。
+
+2、DEMO板DDR内存管理示意
+    以容量为512MBytes的DDR内存为例，以下为根据本文档和Hi3516cv300 SDK默认配置得到的内存管理示意图：
+    DDR:                                                           
+    
+    -----|-------|  0x80000000   # Memory managed by OS.              
+         |   OS  |                                                 
+         |       |                                                 
+    -----|-------|  0x84000000   # USB Memory.
+         |  USB  |                                                 
+    -----|-------|  0x84100000   # Memory managed by MMZ block anonymous.          
+         |  MMZ  |                                                 
+         |       |                                                 
+    -----|-------|  0xA0000000   # End of DDR.                  

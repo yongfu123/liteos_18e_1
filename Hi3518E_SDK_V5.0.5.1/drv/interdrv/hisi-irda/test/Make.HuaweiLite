@@ -1,0 +1,47 @@
+
+SDK_LIB_PATH := -L$(REL_LIB) -L$(REL_LIB)/extdrv -L$(MPP_PATH)/tools/hi3518e
+SDK_LIB :=  $(SDK_LIB_PATH) --start-group -lmpi -lhi_osal -lhi3518e_sys -lhi3518e_viu -lhi3518e_vpss -lhi3518e_vou -lhi_mipi \
+           -lhi_sensor_i2c -lhi_sensor_spi -lisp -lhi3518e_isp -lhi_pwm -lhi3518e_isp -lhi3518e_vgs -lhi3518e_venc -lhi3518e_rc  -lhi3518e_ir\
+		   -lhi3518e_chnl -lhi3518e_h264e -lhi3518e_jpege -lhi3518e_region -lhi_piris -ltde -lhi3518e_tde -lhi_adv7179 -lhi_cipher\
+		   -lhi3518e_base -lupvqe -ldnvqe -lVoiceEngine -lhifb -lhi3518e_ive -live -lmd -lhi3518e_adec -lhi3518e_aenc -lhi_cipher \
+           -lhi3518e_aio -lhi3518e_ai -lacodec -lhi3518e_ao -l_cmoscfg -l_iniparser -l_hiae -l_hiawb -l_hiaf -l_hidefog  --end-group
+
+LIBDEP = --start-group $(LITEOS_LIBS) --end-group
+
+LDFLAGS := $(LITEOS_LDFLAGS)
+
+#CFLAGS += $(LITEOS_OSDRV_INCLUDE)
+#CFLAGS +=$(LITEOS_USR_INCLUDE)
+CFLAGS += $(LIBS_CFLAGS)
+CFLAGS += -D__HuaweiLite__
+
+CFLAGS += -I$(OSAL_ROOT)/include                                                                                                               
+CFLAGS += -I$(SDK_PATH)/drv/interdrv/$(HIARCH)/init/HuaweiLite/
+
+
+SRCS  += $(PWD)/$(OSTYPE)/app_init.c
+SRCS  += $(REL_DIR)/init/sdk_init.c
+OBJS  := $(SRCS:%.c=%.o)
+
+
+BIN := $(TARGET).bin
+MAP := $(TARGET).map
+
+.PHONY : clean all
+
+all: $(BIN)
+
+$(BIN):$(TARGET)
+	@$(OBJCOPY) -O binary $(TARGET) $(BIN)
+
+$(TARGET):$(OBJS)
+	@$(LD) $(LDFLAGS) -Map=$(MAP) -o $(TARGET) $(OBJS) $(SDK_LIB) $(LIBDEP)
+
+$(OBJS):%.o:%.c
+	@$(CC) $(CFLAGS) -c $< -o $@
+
+clean:
+	@rm -f $(TARGET) $(BIN) $(MAP) *.asm
+	@rm -f $(OBJS)
+	@echo INCFLAG=$(CFLAGS)
+	@echo LITEOS_OSDRV_INCLUDE=$(LITEOS_OSDRV_INCLUDE)

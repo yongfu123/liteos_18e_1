@@ -1,0 +1,52 @@
+
+ifeq ($(HIARCH), hi3516a)
+    export LITEOS_PLATFORM?=hi3516a
+else ifeq ($(HIARCH), hi3519)
+    export LITEOS_PLATFORM?=hi3519
+else ifeq ($(HIARCH), hi3519v101)
+    export LITEOS_PLATFORM?=hi3519v101
+else ifeq ($(HIARCH), hi3518e)
+    export LITEOS_PLATFORM?=hi3518ev200
+else ifeq ($(HIARCH), hi3559)
+    export LITEOS_PLATFORM?=hi3559
+endif
+
+#C05 to HuaweiLite OS
+export CVER?=.C$(DBG_FLAG)5
+
+##############################################################################
+export KERNEL_NAME=liteos
+
+# Allocated the kernel position
+ifeq ($(MPP_BUILD), y)
+    ifeq ($(HIARCH),$(filter $(HIARCH), hi3519v101 hi3519))
+        export KERNEL_ROOT?=$(HIWORK_PATH)/liteos$(HIARCH)$(CVER)/$(CPU_TYPE)/opensource/liteos/$(KERNEL_NAME)
+    else ifeq ($(HIARCH),$(filter $(HIARCH), hi3559))
+		export KERNEL_ROOT?=$(SDK_PATH)/osdrv/$(HIARCH)/dual/platform/liteos/$(KERNEL_NAME)
+	else
+        export KERNEL_ROOT?=$(HIWORK_PATH)/liteos$(HIARCH)$(CVER)/opensource/liteos/$(KERNEL_NAME)
+    endif	
+else
+    export KERNEL_ROOT?=$(SDK_PATH)/osdrv/opensource/liteos/$(KERNEL_NAME)
+endif
+
+##############################################################################
+
+export LITEOSTOPDIR=$(KERNEL_ROOT)
+include $(LITEOSTOPDIR)/config.mk
+
+export CROSS := $(CROSS_COMPILE)
+export CC
+export AR
+
+export REL_INC := $(REL_DIR)/include
+export REL_LIB := $(REL_DIR)/lib
+export REL_KO  := $(REL_DIR)/lib
+
+CFLAGS := -fno-builtin -nostdinc -nostdlib
+CFLAGS += $(LITEOS_MACRO) $(LITEOS_OSDRV_INCLUDE) $(LITEOS_USR_INCLUDE)
+CFLAGS += $(LIBS_CFLAGS)
+CFLAGS += $(MPP_CFLAGS)
+CFLAGS += -D__HuaweiLite__ -D__KERNEL__
+
+export CFLAGS
