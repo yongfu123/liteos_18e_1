@@ -1,0 +1,118 @@
+[Stack]
+FillEnabled=0
+OverflowWarningsEnabled=1
+WarningThreshold=90
+SpWarningsEnabled=1
+WarnLogOnly=1
+UseTrigger=1
+TriggerName=main
+LimitSize=0
+ByteLimit=50
+[InterruptLog]
+LogEnabled=0
+SumEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=1
+SumSortOrder=0
+[DataLog]
+LogEnabled=0
+SumEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=1
+[Breakpoints2]
+Count=0
+[Interrupts]
+Enabled=1
+[MemoryMap]
+Enabled=0
+Base=0
+UseAuto=0
+TypeViolation=1
+UnspecRange=1
+ActionState=1
+[Trace1]
+Enabled=0
+ShowSource=1
+[Simulator]
+Freq=16000000
+[DebugChecksum]
+Checksum=941328749
+[CallStack]
+ShowArgs=0
+[Disassembly]
+MixedMode=1
+[DataSample]
+LogEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=1
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
+[Breakpoints]
+Bp0=_ "STD_CODE" "0x00827B" 0 0 0 0 "" 0 ""
+Bp1=_ "STD_CODE" "{$PROJ_DIR$}.399.10" 0 0 0 0 "" 0 ""
+Bp2=_ "STD_CODE" "{$PROJ_DIR$\..\..\117资料\117_mcu\stm8l15x\main.c}.353.1" 0 0 0 0 "" 0 ""
+Bp3=_ "STD_CODE" "{$PROJ_DIR$}.199.4" 0 0 0 0 "" 0 ""
+Bp4=_ "STD_CODE" "{$PROJ_DIR$}.216.25" 0 0 0 0 "" 0 ""
+Bp5=_ "STD_CODE" "{$PROJ_DIR$}.382.9" 0 0 0 0 "" 0 ""
+Bp6=_ "STD_CODE" "{$PROJ_DIR$}.384.9" 0 0 0 0 "" 0 ""
+Bp7=_ "STD_CODE" "{$PROJ_DIR$}.382.9" 0 0 0 0 "" 0 ""
+Bp8=_ "STD_CODE" "{$PROJ_DIR$}.229.13" 0 0 0 0 "" 0 ""
+Bp9=_ "STD_CODE" "{$PROJ_DIR$}.231.3" 0 0 0 0 "" 0 ""
+Bp10=_ "STD_CODE" "{$PROJ_DIR$}.207.21" 0 0 0 0 "" 0 ""
+Bp11=_ "STD_CODE" "{$PROJ_DIR$}.207.21" 0 0 0 0 "" 0 ""
+Bp12=_ "STD_CODE" "{$PROJ_DIR$}.207.21" 0 0 0 0 "" 0 ""
+Bp13=_ "STD_CODE" "{$PROJ_DIR$}.212.4" 0 0 0 0 "" 0 ""
+Bp14=_ "STD_CODE" "{$PROJ_DIR$}.202.5" 0 0 0 0 "" 0 ""
+Bp15=_ "STD_CODE" "{$PROJ_DIR$}.204.5" 0 0 0 0 "" 0 ""
+Bp16=_ "STD_CODE" "{$PROJ_DIR$}.202.5" 0 0 0 0 "" 0 ""
+Bp17=_ "STD_CODE" "{$PROJ_DIR$}.226.13" 0 0 0 0 "" 0 ""
+Bp18=_ "STD_CODE" "{$PROJ_DIR$}.361.5" 0 0 0 0 "" 0 ""
+Bp19=_ "STD_CODE" "{$PROJ_DIR$}.201.5" 0 0 0 0 "" 0 ""
+Bp20=_ "STD_CODE" "{$PROJ_DIR$}.322.3" 0 0 0 0 "" 0 ""
+Bp21=_ "STD_CODE" "{$PROJ_DIR$}.323.3" 0 0 0 0 "" 0 ""
+Bp22=_ "STD_CODE" "{$PROJ_DIR$}.321.3" 0 0 0 0 "" 0 ""
+Bp23=_ "STD_CODE" "{$PROJ_DIR$}.323.3" 0 0 0 0 "" 0 ""
+Bp24=_ "STD_CODE" "{$PROJ_DIR$}.321.3" 0 0 0 0 "" 0 ""
+Bp25=_ "STD_CODE" "{$PROJ_DIR$}.233.3" 0 0 0 0 "" 0 ""
+Bp26=_ "STD_CODE" "{$PROJ_DIR$}.233.3" 0 0 0 0 "" 0 ""
+Bp27=_ "STD_CODE" "{$PROJ_DIR$}.298.3" 0 0 0 0 "" 0 ""
+Bp28=_ "STD_CODE" "{$PROJ_DIR$}.240.5" 0 0 0 0 "" 0 ""
+Bp29=_ "STD_CODE" "{$PROJ_DIR$}.415.5" 0 0 0 0 "" 0 ""
+Bp30=_ "STD_CODE" "{$PROJ_DIR$}.82.25" 0 0 0 0 "" 0 ""
+Bp31=_ "STD_CODE" "{$PROJ_DIR$}.348.4" 0 0 0 0 "" 0 ""
+Bp32=_ "STD_CODE" "{$PROJ_DIR$\stm8l15x_it.c}.185.3" 1 0 0 0 "" 0 ""
+Count=33
+[Aliases]
+A0=_ "D:\soft\3516C开源板_MCU\stm8l15x\main.c" ""
+A1=_ "H:\wangmin_MCU\stm8l15x\STM8L15x_StdPeriph_Driver\src\stm8l15x_clk.c" ""
+A2=_ "H:\wangmin_MCU\stm8l15x\STM8L15x_StdPeriph_Driver\src\stm8l15x_exti.c" ""
+A3=_ "H:\wangmin_MCU\stm8l15x\STM8L15x_StdPeriph_Driver\src\stm8l15x_rtc.c" ""
+A4=_ "H:\wangmin_MCU\stm8l15x\STM8L15x_StdPeriph_Driver\src\stm8l15x_tim3.c" ""
+A5=_ "H:\wangmin_MCU\stm8l15x\STM8L15x_StdPeriph_Driver\src\stm8l15x_usart.c" ""
+A6=_ "H:\单片机调试\stm8\0825_调试\优化版本 - 副本\新建文件夹 (2)\stm8l15x\stm8l15x_it.c" ""
+A7=_ "Z:\117_mcu\mcu\stm8l15x\main.c" ""
+A8=_ "Z:\hi3516a\action_dv\imx117\mcu\stm8l_project\0309_test\STM8L15x_StdPeriph_Driver\src\stm8l15x_gpio.c" ""
+A9=_ "Z:\hi3516a\action_dv\imx117\mcu\stm8l_project\0309_test\STM8L15x_StdPeriph_Driver\src\stm8l15x_tim3.c" ""
+A10=_ "Z:\hi3516a\action_dv\imx117\mcu\stm8l_project\0309_test\STM8L15x_StdPeriph_Driver\src\stm8l15x_usart.c" ""
+A11=_ "Z:\hi3516a\action_dv\imx117\mcu\stm8l_project\0309_test\main.c" ""
+A12=_ "Z:\hi3516a\action_dv\imx117\mcu\stm8l_project\0309_test\stm8l15x_it.c" ""
+A13=_ "Z:\hi3516a\action_dv\imx117\mcu\stm8l_project\dv-imx117-mcu\STM8L15x_StdPeriph_Driver\src\stm8l15x_gpio.c" ""
+A14=_ "Z:\hi3516a\action_dv\imx117\mcu\stm8l_project\dv-imx117-mcu\STM8L15x_StdPeriph_Driver\src\stm8l15x_tim3.c" ""
+A15=_ "Z:\hi3516a\action_dv\imx117\mcu\stm8l_project\dv-imx117-mcu\STM8L15x_StdPeriph_Driver\src\stm8l15x_usart.c" ""
+A16=_ "Z:\hi3516a\action_dv\imx117\mcu\stm8l_project\dv-imx117-mcu\main.c" ""
+A17=_ "Z:\hi3516a\action_dv\imx117\mcu\stm8l_project\dv-imx117-mcu\stm8l15x_it.c" ""
+A18=_ "Z:\hi3516a\action_dv\imx117\pir\src_code\pir-mcu\STM8L15x_StdPeriph_Driver\src\stm8l15x_gpio.c" ""
+A19=_ "Z:\hi3516a\action_dv\imx117\pir\src_code\pir-mcu\STM8L15x_StdPeriph_Driver\src\stm8l15x_tim3.c" ""
+A20=_ "Z:\hi3516a\action_dv\imx117\pir\src_code\pir-mcu\STM8L15x_StdPeriph_Driver\src\stm8l15x_usart.c" ""
+Count=21
+SuppressDialog=1
+[DebuggerSettings]
+DisableInterruptsWhenStepping=1

@@ -1,0 +1,74 @@
+[Stack]
+FillEnabled=0
+OverflowWarningsEnabled=1
+WarningThreshold=90
+SpWarningsEnabled=1
+WarnLogOnly=1
+UseTrigger=1
+TriggerName=main
+LimitSize=0
+ByteLimit=50
+[InterruptLog]
+LogEnabled=0
+SumEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=1
+SumSortOrder=0
+[DataLog]
+LogEnabled=0
+SumEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=1
+[Breakpoints2]
+Count=0
+[Interrupts]
+Enabled=1
+[MemoryMap]
+Enabled=0
+Base=0
+UseAuto=0
+TypeViolation=1
+UnspecRange=1
+ActionState=1
+[Trace1]
+Enabled=0
+ShowSource=1
+[Simulator]
+Freq=16000000
+[DebugChecksum]
+Checksum=891036681
+[CallStack]
+ShowArgs=0
+[Disassembly]
+MixedMode=1
+[DataSample]
+LogEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=1
+[Breakpoints]
+Bp0=_ "STD_CODE" "{$PROJ_DIR$\halt.c}.170.4" 0 0 0 0 "" 0 ""
+Bp1=_ "STD_CODE" "{$PROJ_DIR$\halt.c}.172.4" 0 0 0 0 "" 0 ""
+Bp2=_ "STD_CODE" "{$PROJ_DIR$\halt.c}.44.5" 0 0 0 0 "" 0 ""
+Bp3=_ "STD_CODE" "{$PROJ_DIR$\halt.c}.46.5" 0 0 0 0 "" 0 ""
+Count=4
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
+[Aliases]
+A0=_ "Z:\hi3518ev200\mcu\stm8l15x_dvs\STM8L15x_StdPeriph_Driver\src\stm8l15x_adc.c" ""
+A1=_ "Z:\hi3518ev200\mcu\stm8l15x_dvs\STM8L15x_StdPeriph_Driver\src\stm8l15x_rtc.c" ""
+A2=_ "Z:\hi3518ev200\mcu\stm8l15x_dvs\STM8L15x_StdPeriph_Driver\src\stm8l15x_tim3.c" ""
+A3=_ "Z:\hi3518ev200\mcu\stm8l15x_dvs\STM8L15x_StdPeriph_Driver\src\stm8l15x_usart.c" ""
+A4=_ "Z:\hi3518ev200\mcu\stm8l15x_dvs\halt.c" ""
+A5=_ "Z:\hi3518ev200\mcu\stm8l15x_dvs\stm8l15x_it.c" ""
+Count=6
+SuppressDialog=1
+[DebuggerSettings]
+DisableInterruptsWhenStepping=0

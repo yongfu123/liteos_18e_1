@@ -1,0 +1,9 @@
+---- EXTI_SetPinSensitivity Matches (8 in 5 files) ----
+Halt.c (e:\liteos\stm8l15x_dvs):    EXTI_SetPinSensitivity(EXTI_Pin_1, EXTI_Trigger_Falling);
+Main.c (e:\liteos\stm8l15x_dvs):    EXTI_SetPinSensitivity(EXTI_Pin_0, EXTI_Trigger_Rising);
+Main.c (e:\liteos\stm8l15x_dvs):    EXTI_SetPinSensitivity(EXTI_Pin_2, EXTI_Trigger_Falling);
+Main.c (e:\liteos\stm8l15x_dvs):    EXTI_SetPinSensitivity(EXTI_Pin_0, EXTI_Trigger_Rising);
+Stm8l15x_exti.c (e:\liteos\stm8l15x_dvs\stm8l15x_stdperiph_driver\src):            EXTI_SetPinSensitivity()
+Stm8l15x_exti.c (e:\liteos\stm8l15x_dvs\stm8l15x_stdperiph_driver\src):void EXTI_SetPinSensitivity(EXTI_Pin_TypeDef EXTI_Pin, EXTI_Trigger_TypeDef EXTI_Trigger)
+Stm8l15x_exti.h (e:\liteos\stm8l15x_dvs\stm8l15x_stdperiph_driver\inc):void EXTI_SetPinSensitivity(EXTI_Pin_TypeDef EXTI_Pin, EXTI_Trigger_TypeDef EXTI_Trigger);
+Stm8l15x_gpio.c (e:\liteos\stm8l15x_dvs\stm8l15x_stdperiph_driver\src):  *              EXTI_SetPinSensitivity() in the EXTI peripheral driver "stm8l15x_exti.c"
