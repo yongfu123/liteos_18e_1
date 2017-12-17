@@ -1,0 +1,65 @@
+#!/bin/sh
+source scripts/common.sh
+
+ECHO "Unpacking SDK" COLOR_YELLOW
+
+WARN "Be sure you have installed the cross-compiler. if not, install it first!"
+WARN "ALL THE SOUCE FILES WILL BE OVERWRITED, FILES YOU MOTIFIED WILL BE LOST !!!"
+ECHO ""
+
+#ECHO "To continue, type 'Yes' and then press ENTER ..."
+
+#read choice
+#[ x$choice != xYes ] && exit 1
+
+SDK_CHIP=hi3518e
+OS_TYPE=HuaweiLite
+ECHO "OS_TYPE  =$OS_TYPE"
+ECHO "SDK_CHIP =$SDK_CHIP"
+
+set +e
+
+#ECHO "install cross toolchain"
+#./tools/toolchains/cross.install
+
+ECHO "unpacking osal"
+mkdir -p osal/
+run_command_progress_float "tar -xvzf package/osal.tgz" 0 "tar -tzf package/osal.tgz | wc -l"
+
+ECHO "unpacking osdrv"
+mkdir -p osdrv/
+run_command_progress_float "tar -xvzf package/osdrv.tgz" 0 "tar -tzf package/osdrv.tgz | wc -l"
+
+mkdir -p osdrv/
+if [ "$OS_TYPE" = "linux" ]; then
+    ECHO "unpacking linux kernel"
+    run_command_progress_float "tar -xvzf osdrv/opensource/kernel/linux-4.5.y.tgz -C osdrv/opensource/kernel/" 0 "tar -tzf osdrv/opensource/kernel/linux-4.5.y.tgz | wc -l"
+else
+    ECHO "unpacking liteos kernel"
+    run_command_progress_float "tar -xvzf osdrv/opensource/liteos/liteos.tgz -C osdrv/opensource/liteos/" 0 "tar -tzf osdrv/opensource/liteos/liteos.tgz | wc -l"
+fi
+
+if [ "$SDK_CHIP" = "hi3519" ]; then
+    ECHO "unpacking mpp_single"
+    mkdir -pv mpp_single
+    run_command_progress_float "tar -xvzf package/mpp_single.tgz" 0 "tar -tzf package/mpp_single.tgz | wc -l"
+
+    if [ "$OS_TYPE" = "linux" ]; then
+	ECHO "unpacking mpp_big-little"
+	mkdir -pv mpp_big-little
+	run_command_progress_float "tar -xvzf package/mpp_big-little.tgz" 0 "tar -tzf package/mpp_big-little.tgz | wc -l"
+    fi
+elif [ "$SDK_CHIP" = "hi3519v101" ];then
+    ECHO "unpacking mpp_big-little"
+    mkdir -pv mpp_big-little
+    run_command_progress_float "tar -xvzf package/mpp_big-little.tgz" 0 "tar -tzf package/mpp_big-little.tgz | wc -l"
+else
+    ECHO "unpacking mpp"
+    mkdir -pv mpp
+    run_command_progress_float "tar -xvzf package/mpp.tgz" 0 "tar -tzf package/mpp.tgz | wc -l"
+fi
+
+ECHO "unpacking drv"
+mkdir -pv drv
+run_command_progress_float "tar -xvzf package/drv.tgz" 0 	"tar -tzf package/drv.tgz | wc -l"
+
