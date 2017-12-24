@@ -20,7 +20,8 @@ WIFI_DEVICE ?= sdio_hi1131sv100
 #LITEOSTOPDIR ?= $(CURDIR)/../liteos
 
 CURDIR := $(shell if [ "$$PWD" != "" ]; then echo $$PWD; else pwd; fi)
-LITEOSTOPDIR ?= $(CURDIR)/../liteos
+#LITEOSTOPDIR ?= $(CURDIR)/../liteos
+LITEOSTOPDIR ?= $(CURDIR)/../../osdrv/opensource/liteos/liteos
 
 include ${LITEOSTOPDIR}/config.mk
 ROOTOUT := $(CURDIR)/out/${LITEOS_PLATFORM}
