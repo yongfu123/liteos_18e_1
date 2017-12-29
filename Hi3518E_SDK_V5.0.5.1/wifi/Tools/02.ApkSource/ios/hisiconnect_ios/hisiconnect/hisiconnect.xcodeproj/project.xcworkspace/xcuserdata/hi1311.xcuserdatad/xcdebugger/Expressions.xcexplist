@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[SendingDataViewController SendDataBtnClick:]:SendingDataViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[ProcessMultiCastLinkData printCharArray:]:ProcessMultiCastLinkData.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "strlen(*input)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ProcessMultiCastLinkData constructMultiCastLinkMessageToSend:]:ProcessMultiCastLinkData.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "strName.length">
+            </PersistentString>
+            <PersistentString
+               value = "(int)totalMessage[29]">
+            </PersistentString>
+            <PersistentString
+               value = "[self charToIntUtil:macArray[strName.length-3]]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

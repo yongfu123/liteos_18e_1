@@ -1,0 +1,508 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		633803461EB873600053EA9F /* UDPClientSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 633803451EB873600053EA9F /* UDPClientSocket.m */; };
+		6338034A1EB873E20053EA9F /* TCPServerSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 633803491EB873E20053EA9F /* TCPServerSocket.m */; };
+		633803541EB87EC00053EA9F /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 633803531EB87EC00053EA9F /* Reachability.m */; };
+		633803571EB87ECE0053EA9F /* AHReach.m in Sources */ = {isa = PBXBuildFile; fileRef = 633803561EB87ECE0053EA9F /* AHReach.m */; };
+		6338035F1EB87FD20053EA9F /* Documentation.html in Resources */ = {isa = PBXBuildFile; fileRef = 6338035A1EB87FD20053EA9F /* Documentation.html */; };
+		633803601EB87FD20053EA9F /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 6338035C1EB87FD20053EA9F /* GCDAsyncSocket.m */; };
+		633803611EB87FD20053EA9F /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 6338035E1EB87FD20053EA9F /* GCDAsyncUdpSocket.m */; };
+		633803631EB8A2DB0053EA9F /* TCPClientSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 633803621EB8A2DB0053EA9F /* TCPClientSocket.m */; };
+		639FBF011EAAEDEF00BBDB9D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 639FBF001EAAEDEF00BBDB9D /* main.m */; };
+		639FBF041EAAEDEF00BBDB9D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 639FBF031EAAEDEF00BBDB9D /* AppDelegate.m */; };
+		639FBF071EAAEDEF00BBDB9D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 639FBF061EAAEDEF00BBDB9D /* ViewController.m */; };
+		639FBF0A1EAAEDEF00BBDB9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 639FBF081EAAEDEF00BBDB9D /* Main.storyboard */; };
+		639FBF0C1EAAEDEF00BBDB9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 639FBF0B1EAAEDEF00BBDB9D /* Assets.xcassets */; };
+		639FBF0F1EAAEDEF00BBDB9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 639FBF0D1EAAEDEF00BBDB9D /* LaunchScreen.storyboard */; };
+		639FBF1D1EADD05D00BBDB9D /* SendingDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 639FBF1C1EADD05D00BBDB9D /* SendingDataViewController.m */; };
+		639FBF2E1EADFBA300BBDB9D /* NetworkManagerByReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 639FBF2D1EADFBA300BBDB9D /* NetworkManagerByReachability.m */; };
+		639FBF331EB0810A00BBDB9D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 639FBF321EB0810A00BBDB9D /* SystemConfiguration.framework */; };
+		63AF539C1EFE17A9005D1B6E /* libhisiConnectLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63AF539B1EFE17A9005D1B6E /* libhisiConnectLib.a */; };
+		63BBC3F31EF7CEA200F6BB27 /* dropdownMenu_cornerIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 63BBC3F11EF7CEA200F6BB27 /* dropdownMenu_cornerIcon.png */; };
+		63BBC3F41EF7CEA200F6BB27 /* linktype.png in Resources */ = {isa = PBXBuildFile; fileRef = 63BBC3F21EF7CEA200F6BB27 /* linktype.png */; };
+		63FFD21C1ED6AB6C00F2F465 /* DropdownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FFD21B1ED6AB6C00F2F465 /* DropdownMenu.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		633803451EB873600053EA9F /* UDPClientSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UDPClientSocket.m; path = wifi_interface/UDPClientSocket.m; sourceTree = "<group>"; };
+		633803481EB873AD0053EA9F /* UDPClientSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UDPClientSocket.h; path = wifi_interface/UDPClientSocket.h; sourceTree = "<group>"; };
+		633803491EB873E20053EA9F /* TCPServerSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TCPServerSocket.m; path = wifi_interface/TCPServerSocket.m; sourceTree = "<group>"; };
+		6338034C1EB874680053EA9F /* TCPServerSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCPServerSocket.h; path = wifi_interface/TCPServerSocket.h; sourceTree = "<group>"; };
+		633803521EB87EC00053EA9F /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = proto/Reachability/Reachability.h; sourceTree = "<group>"; };
+		633803531EB87EC00053EA9F /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = proto/Reachability/Reachability.m; sourceTree = "<group>"; };
+		633803551EB87ECE0053EA9F /* AHReach.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AHReach.h; path = proto/AHReach/AHReach.h; sourceTree = "<group>"; };
+		633803561EB87ECE0053EA9F /* AHReach.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AHReach.m; path = proto/AHReach/AHReach.m; sourceTree = "<group>"; };
+		6338035A1EB87FD20053EA9F /* Documentation.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = Documentation.html; path = proto/CocoaAsyncSocket/GCD/Documentation.html; sourceTree = "<group>"; };
+		6338035B1EB87FD20053EA9F /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCDAsyncSocket.h; path = proto/CocoaAsyncSocket/GCD/GCDAsyncSocket.h; sourceTree = "<group>"; };
+		6338035C1EB87FD20053EA9F /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCDAsyncSocket.m; path = proto/CocoaAsyncSocket/GCD/GCDAsyncSocket.m; sourceTree = "<group>"; };
+		6338035D1EB87FD20053EA9F /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCDAsyncUdpSocket.h; path = proto/CocoaAsyncSocket/GCD/GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
+		6338035E1EB87FD20053EA9F /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCDAsyncUdpSocket.m; path = proto/CocoaAsyncSocket/GCD/GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
+		633803621EB8A2DB0053EA9F /* TCPClientSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TCPClientSocket.m; path = wifi_interface/TCPClientSocket.m; sourceTree = "<group>"; };
+		633803651EB8A3190053EA9F /* TCPClientSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCPClientSocket.h; path = wifi_interface/TCPClientSocket.h; sourceTree = "<group>"; };
+		635739261ECC004C0068450C /* hisi_util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hisi_util.h; sourceTree = "<group>"; };
+		639FBEFC1EAAEDEF00BBDB9D /* hisiconnect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hisiconnect.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		639FBF001EAAEDEF00BBDB9D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		639FBF021EAAEDEF00BBDB9D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		639FBF031EAAEDEF00BBDB9D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		639FBF051EAAEDEF00BBDB9D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		639FBF061EAAEDEF00BBDB9D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		639FBF091EAAEDEF00BBDB9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		639FBF0B1EAAEDEF00BBDB9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		639FBF0E1EAAEDEF00BBDB9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		639FBF101EAAEDEF00BBDB9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		639FBF1C1EADD05D00BBDB9D /* SendingDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendingDataViewController.m; sourceTree = "<group>"; };
+		639FBF1F1EADD0CA00BBDB9D /* SendingDataViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SendingDataViewController.h; sourceTree = "<group>"; };
+		639FBF2D1EADFBA300BBDB9D /* NetworkManagerByReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetworkManagerByReachability.m; path = wifi_interface/NetworkManagerByReachability.m; sourceTree = "<group>"; };
+		639FBF301EADFC1000BBDB9D /* NetworkManagerByReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworkManagerByReachability.h; path = wifi_interface/NetworkManagerByReachability.h; sourceTree = "<group>"; };
+		639FBF321EB0810A00BBDB9D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		63AF539B1EFE17A9005D1B6E /* libhisiConnectLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libhisiConnectLib.a; path = hisiconnect_lib/libhisiConnectLib.a; sourceTree = "<group>"; };
+		63BBC3EA1EF7CD0300F6BB27 /* WifiNetworkInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WifiNetworkInfo.h; path = hisiconnect_lib/WifiNetworkInfo.h; sourceTree = "<group>"; };
+		63BBC3ED1EF7CD1400F6BB27 /* ProcessMultiCastLinkData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProcessMultiCastLinkData.h; path = hisiconnect_lib/ProcessMultiCastLinkData.h; sourceTree = "<group>"; };
+		63BBC3F11EF7CEA200F6BB27 /* dropdownMenu_cornerIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dropdownMenu_cornerIcon.png; path = res/dropdownMenu_cornerIcon.png; sourceTree = "<group>"; };
+		63BBC3F21EF7CEA200F6BB27 /* linktype.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = linktype.png; path = res/linktype.png; sourceTree = "<group>"; };
+		63FFD21A1ED6AB5600F2F465 /* DropdownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropdownMenu.h; sourceTree = "<group>"; };
+		63FFD21B1ED6AB6C00F2F465 /* DropdownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropdownMenu.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		639FBEF91EAAEDEF00BBDB9D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				639FBF331EB0810A00BBDB9D /* SystemConfiguration.framework in Frameworks */,
+				63AF539C1EFE17A9005D1B6E /* libhisiConnectLib.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6338034F1EB87E350053EA9F /* CocoaAsyncSocket */ = {
+			isa = PBXGroup;
+			children = (
+				633803501EB87E3D0053EA9F /* GCD */,
+			);
+			name = CocoaAsyncSocket;
+			sourceTree = "<group>";
+		};
+		633803501EB87E3D0053EA9F /* GCD */ = {
+			isa = PBXGroup;
+			children = (
+				6338035A1EB87FD20053EA9F /* Documentation.html */,
+				6338035B1EB87FD20053EA9F /* GCDAsyncSocket.h */,
+				6338035C1EB87FD20053EA9F /* GCDAsyncSocket.m */,
+				6338035D1EB87FD20053EA9F /* GCDAsyncUdpSocket.h */,
+				6338035E1EB87FD20053EA9F /* GCDAsyncUdpSocket.m */,
+			);
+			name = GCD;
+			sourceTree = "<group>";
+		};
+		639FBEF31EAAEDEF00BBDB9D = {
+			isa = PBXGroup;
+			children = (
+				63BBC3EE1EF7CE2000F6BB27 /* res */,
+				639FBF311EB0810A00BBDB9D /* Frameworks */,
+				639FBEFE1EAAEDEF00BBDB9D /* hisiconnect */,
+				639FBF241EADE77900BBDB9D /* hisiconnect_lib */,
+				639FBEFD1EAAEDEF00BBDB9D /* Products */,
+				639FBF211EADE6CB00BBDB9D /* proto */,
+				639FBF231EADE74800BBDB9D /* wifi_interface */,
+			);
+			sourceTree = "<group>";
+		};
+		639FBEFD1EAAEDEF00BBDB9D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				639FBEFC1EAAEDEF00BBDB9D /* hisiconnect.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		639FBEFE1EAAEDEF00BBDB9D /* hisiconnect */ = {
+			isa = PBXGroup;
+			children = (
+				639FBF1C1EADD05D00BBDB9D /* SendingDataViewController.m */,
+				639FBF1F1EADD0CA00BBDB9D /* SendingDataViewController.h */,
+				639FBF021EAAEDEF00BBDB9D /* AppDelegate.h */,
+				639FBF031EAAEDEF00BBDB9D /* AppDelegate.m */,
+				639FBF051EAAEDEF00BBDB9D /* ViewController.h */,
+				639FBF061EAAEDEF00BBDB9D /* ViewController.m */,
+				639FBF081EAAEDEF00BBDB9D /* Main.storyboard */,
+				639FBF0B1EAAEDEF00BBDB9D /* Assets.xcassets */,
+				639FBF0D1EAAEDEF00BBDB9D /* LaunchScreen.storyboard */,
+				639FBF101EAAEDEF00BBDB9D /* Info.plist */,
+				639FBEFF1EAAEDEF00BBDB9D /* Supporting Files */,
+				635739261ECC004C0068450C /* hisi_util.h */,
+				63FFD21A1ED6AB5600F2F465 /* DropdownMenu.h */,
+				63FFD21B1ED6AB6C00F2F465 /* DropdownMenu.m */,
+			);
+			path = hisiconnect;
+			sourceTree = "<group>";
+		};
+		639FBEFF1EAAEDEF00BBDB9D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				639FBF001EAAEDEF00BBDB9D /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		639FBF161EADCEC100BBDB9D /* AHReach */ = {
+			isa = PBXGroup;
+			children = (
+				633803551EB87ECE0053EA9F /* AHReach.h */,
+				633803561EB87ECE0053EA9F /* AHReach.m */,
+			);
+			name = AHReach;
+			sourceTree = "<group>";
+		};
+		639FBF211EADE6CB00BBDB9D /* proto */ = {
+			isa = PBXGroup;
+			children = (
+				6338034F1EB87E350053EA9F /* CocoaAsyncSocket */,
+				639FBF221EADE71600BBDB9D /* Reachability */,
+				639FBF161EADCEC100BBDB9D /* AHReach */,
+			);
+			name = proto;
+			sourceTree = "<group>";
+		};
+		639FBF221EADE71600BBDB9D /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				633803521EB87EC00053EA9F /* Reachability.h */,
+				633803531EB87EC00053EA9F /* Reachability.m */,
+			);
+			name = Reachability;
+			sourceTree = "<group>";
+		};
+		639FBF231EADE74800BBDB9D /* wifi_interface */ = {
+			isa = PBXGroup;
+			children = (
+				633803651EB8A3190053EA9F /* TCPClientSocket.h */,
+				6338034C1EB874680053EA9F /* TCPServerSocket.h */,
+				633803481EB873AD0053EA9F /* UDPClientSocket.h */,
+				639FBF301EADFC1000BBDB9D /* NetworkManagerByReachability.h */,
+				639FBF2D1EADFBA300BBDB9D /* NetworkManagerByReachability.m */,
+				633803451EB873600053EA9F /* UDPClientSocket.m */,
+				633803491EB873E20053EA9F /* TCPServerSocket.m */,
+				633803621EB8A2DB0053EA9F /* TCPClientSocket.m */,
+			);
+			name = wifi_interface;
+			sourceTree = "<group>";
+		};
+		639FBF241EADE77900BBDB9D /* hisiconnect_lib */ = {
+			isa = PBXGroup;
+			children = (
+				63AF539B1EFE17A9005D1B6E /* libhisiConnectLib.a */,
+				63BBC3ED1EF7CD1400F6BB27 /* ProcessMultiCastLinkData.h */,
+				63BBC3EA1EF7CD0300F6BB27 /* WifiNetworkInfo.h */,
+			);
+			name = hisiconnect_lib;
+			sourceTree = "<group>";
+		};
+		639FBF311EB0810A00BBDB9D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				639FBF321EB0810A00BBDB9D /* SystemConfiguration.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		63BBC3EE1EF7CE2000F6BB27 /* res */ = {
+			isa = PBXGroup;
+			children = (
+				63BBC3F11EF7CEA200F6BB27 /* dropdownMenu_cornerIcon.png */,
+				63BBC3F21EF7CEA200F6BB27 /* linktype.png */,
+			);
+			name = res;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		639FBEFB1EAAEDEF00BBDB9D /* hisiconnect */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 639FBF131EAAEDEF00BBDB9D /* Build configuration list for PBXNativeTarget "hisiconnect" */;
+			buildPhases = (
+				639FBEF81EAAEDEF00BBDB9D /* Sources */,
+				639FBEF91EAAEDEF00BBDB9D /* Frameworks */,
+				639FBEFA1EAAEDEF00BBDB9D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = hisiconnect;
+			productName = hisiconnect;
+			productReference = 639FBEFC1EAAEDEF00BBDB9D /* hisiconnect.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		639FBEF41EAAEDEF00BBDB9D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = com.huawei.hisiconnect;
+				TargetAttributes = {
+					639FBEFB1EAAEDEF00BBDB9D = {
+						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = F6TSM6UYZN;
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = 639FBEF71EAAEDEF00BBDB9D /* Build configuration list for PBXProject "hisiconnect" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 639FBEF31EAAEDEF00BBDB9D;
+			productRefGroup = 639FBEFD1EAAEDEF00BBDB9D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				639FBEFB1EAAEDEF00BBDB9D /* hisiconnect */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		639FBEFA1EAAEDEF00BBDB9D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				639FBF0F1EAAEDEF00BBDB9D /* LaunchScreen.storyboard in Resources */,
+				639FBF0C1EAAEDEF00BBDB9D /* Assets.xcassets in Resources */,
+				639FBF0A1EAAEDEF00BBDB9D /* Main.storyboard in Resources */,
+				63BBC3F31EF7CEA200F6BB27 /* dropdownMenu_cornerIcon.png in Resources */,
+				6338035F1EB87FD20053EA9F /* Documentation.html in Resources */,
+				63BBC3F41EF7CEA200F6BB27 /* linktype.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		639FBEF81EAAEDEF00BBDB9D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				639FBF071EAAEDEF00BBDB9D /* ViewController.m in Sources */,
+				639FBF041EAAEDEF00BBDB9D /* AppDelegate.m in Sources */,
+				63FFD21C1ED6AB6C00F2F465 /* DropdownMenu.m in Sources */,
+				6338034A1EB873E20053EA9F /* TCPServerSocket.m in Sources */,
+				633803611EB87FD20053EA9F /* GCDAsyncUdpSocket.m in Sources */,
+				633803461EB873600053EA9F /* UDPClientSocket.m in Sources */,
+				639FBF011EAAEDEF00BBDB9D /* main.m in Sources */,
+				633803571EB87ECE0053EA9F /* AHReach.m in Sources */,
+				639FBF1D1EADD05D00BBDB9D /* SendingDataViewController.m in Sources */,
+				633803541EB87EC00053EA9F /* Reachability.m in Sources */,
+				633803631EB8A2DB0053EA9F /* TCPClientSocket.m in Sources */,
+				633803601EB87FD20053EA9F /* GCDAsyncSocket.m in Sources */,
+				639FBF2E1EADFBA300BBDB9D /* NetworkManagerByReachability.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		639FBF081EAAEDEF00BBDB9D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				639FBF091EAAEDEF00BBDB9D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		639FBF0D1EAAEDEF00BBDB9D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				639FBF0E1EAAEDEF00BBDB9D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		639FBF111EAAEDEF00BBDB9D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				VALID_ARCHS = "armv7 arm64";
+			};
+			name = Debug;
+		};
+		639FBF121EAAEDEF00BBDB9D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv7 arm64";
+			};
+			name = Release;
+		};
+		639FBF141EAAEDEF00BBDB9D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: zhang lu (6CH8WP2GP5)";
+				DEVELOPMENT_TEAM = F6TSM6UYZN;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = hisiconnect/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/hisiconnect_lib",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.huawei.hisiconnect.hisiconnect;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "63322768-b606-4821-8f31-716923a9aeaa";
+				PROVISIONING_PROFILE_SPECIFIER = Hi1131s_hisiconnect_pp;
+				VALID_ARCHS = "armv7 arm64";
+				WARNING_CFLAGS = "-Wmissing-selector-name";
+			};
+			name = Debug;
+		};
+		639FBF151EAAEDEF00BBDB9D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: zhang lu (6CH8WP2GP5)";
+				DEVELOPMENT_TEAM = F6TSM6UYZN;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = hisiconnect/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/hisiconnect_lib",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.huawei.hisiconnect.hisiconnect;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "63322768-b606-4821-8f31-716923a9aeaa";
+				PROVISIONING_PROFILE_SPECIFIER = Hi1131s_hisiconnect_pp;
+				VALID_ARCHS = "armv7 arm64";
+				WARNING_CFLAGS = "-Wmissing-selector-name";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		639FBEF71EAAEDEF00BBDB9D /* Build configuration list for PBXProject "hisiconnect" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				639FBF111EAAEDEF00BBDB9D /* Debug */,
+				639FBF121EAAEDEF00BBDB9D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		639FBF131EAAEDEF00BBDB9D /* Build configuration list for PBXNativeTarget "hisiconnect" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				639FBF141EAAEDEF00BBDB9D /* Debug */,
+				639FBF151EAAEDEF00BBDB9D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 639FBEF41EAAEDEF00BBDB9D /* Project object */;
+}

@@ -1,0 +1,111 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp" >
+
+    <TextView
+        android:id="@+id/wifi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="47dp"
+        android:text="@string/wifi"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textSSID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/wifi"
+        android:layout_alignBottom="@+id/wifi"
+        android:layout_alignParentRight="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="right"
+        android:text="@string/ssid"
+        android:textSize="25sp"
+        android:textStyle="italic" />
+
+    <EditText
+        android:id="@+id/inputPass"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignLeft="@+id/wifi"
+        android:layout_alignRight="@+id/textSSID"
+        android:layout_below="@+id/wifi"
+        android:layout_marginTop="34dp"
+        android:background="@drawable/shape"
+        android:ems="10"
+        android:hint="@string/password"
+        android:inputType="textPassword" />
+
+    <CheckBox
+        android:id="@+id/checkPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/inputPass"
+        android:layout_below="@+id/inputPass"
+        android:layout_marginTop="14dp"
+        android:text="@string/displaypass" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/textSSID"
+        android:layout_below="@+id/textSSID"
+        android:background="#404040"
+        android:text="" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/inputPass"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="45dp" >
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/about"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/about" />
+
+    <Button
+        android:id="@+id/connect_ap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/checkPassword"
+        android:layout_below="@+id/relativeLayout1"
+        android:layout_marginTop="37dp"
+        android:onClick="onClick_Event_AP"
+        android:text="@string/connect_ap" />
+
+    <Button
+        android:id="@+id/connect_multi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/connect_ap"
+        android:layout_alignBottom="@+id/connect_ap"
+        android:layout_alignRight="@+id/inputPass"
+        android:onClick="onClick_Event_Multi"
+        android:text="@string/connect_multi" />
+
+    <TextView
+        android:id="@+id/errorhint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/about"
+        android:layout_alignLeft="@+id/connect_ap"
+        android:layout_alignRight="@+id/connect_multi"
+        android:layout_below="@+id/connect_ap"
+        android:layout_marginTop="24dp"
+        android:text="" />
+
+</RelativeLayout>

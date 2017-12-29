@@ -1,0 +1,34 @@
+
+注意事项：
+1.liteos sdk版本和wifi_project是分开独立发布的，版本获取请联系接口FAE或到华为hisupport下载。
+2.当前版本的wifi_project基于Huawei LiteOS V100R002C00SPC001B011，请确认SDK版本信息，查看方式
+    liteos/ReleaseNotes
+    Huawei LiteOS V100R002C00SPC001B011   2016/10/13
+    Huawei LiteOS 1.2.2
+3.Huawei LiteOS V100R002C00SPC001B011 增加对timer接口的修改，目前wifi_project已经同步更新修改。
+  详细信息如下，如果当前的SDK版本没有进行相关修改，请联系FAE进行SDK版本更新，否则功能会有异常。
+  更新后：
+  liteos/compat/linux/include/linux/timer.h
+  struct timer_list {
+          unsigned long expires;
+          void (*function)(unsigned long);
+          unsigned long data;
+  
+          UINT16 timerid;
+          unsigned int flag;          /*修改点*/
+          BOOL created;
+  #define TIMER_VALID    0xABCDDCBA   /*修改点，*/
+  #define TIMER_UNVALID  0xDCBAABCD   /*修改点，*/
+  } ;
+
+  更新前（如果当前使用的版本的struct timer_list信息如下，请必须更新SDK版本，否则功能会有异常）
+  liteos/compat/linux/include/linux/timer.h
+  struct timer_list {
+          unsigned long expires;
+         void (*function)(unsigned long);
+         unsigned long data;
+  
+          UINT16 timerid;
+         BOOL used;
+         BOOL created;
+ } ;

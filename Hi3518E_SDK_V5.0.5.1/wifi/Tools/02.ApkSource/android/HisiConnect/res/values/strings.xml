@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">HisiLink</string>
+    <string name="action_settings">Settings</string>
+    <string name="search">搜索设备</string>
+    <string name="device_name">设备名</string>
+    <string name="wifi">Wi-Fi</string>
+    <string name="password">密码</string>
+    <string name="ssid">SSID</string>
+    <string name="connect_ap">AP模式关联</string>
+    <string name="connect_multi">组播模式关联</string>
+    <string name="title_activity_device">连接设置</string>
+	<string name="displaypass">显示密码</string>
+	<string name="about">updated @20170329</string>
+</resources>

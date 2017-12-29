@@ -1,0 +1,64 @@
+1. 差分包对应的Liteos版本
+   Huawei LiteOS V100R002C00SPC001B011   2016/10/13
+   Huawei LiteOS 1.2.2
+
+   请基于该版本的Liteos版本进行开发适配。
+
+2. 烧写映像文件到SPI Nor Flash
+    以8M SPI Nor Flash为例。
+    1）地址空间说明
+        |      1M       |       6528K       |          448K                |              192K                  |
+        |---------------|-------------------|------------------------------|------------------------------------|
+        |     boot      |   sample_xxx      | Wi-Fi DFX 0x750000 ~0x7c0000 |  Wi-Fi数据备份0x7d0000 ~ 0x7f0000  |
+
+        以下的操作均基于图示的地址空间分配，您也可以根据实际情况进行调整。数据备份部分当前占用192K,后续可以调整。
+
+    2）烧写bin
+        tftp 0x82000000 sample.bin;sf probe 0;sf erase 0x100000 0x650000;sf write 0x82000000 0x100000 0x650000 
+        
+    3)烧写文件系统（当前Hi1131S 不依赖文件系统）  重点关注
+
+    5）设置启动参数
+        setenv bootcmd 'sf probe 0;sf read 0x80008000 0x100000 0x650000; go 0x80008000';setenv bootdelay 2;sa;
+
+
+3. 命令行操作Wi-Fi
+
+3.1 STA模式
+        set_macaddr 3A 2E 11 31 13 E1   //配置mac地址(如果模组自带MAC地址，则不需要配置）
+	wpa_start                       //加载wlan0，开启STAUT模式
+	wpa_stop                        //stop wpa_supplicant,关闭STA模式
+
+
+	wpa_connect 0 ssid 加密方式 密码
+	wpa_connect 0 ssid open
+	wpa_connect 0 ssid wpa 1234567890 0			//asic，可省略0
+	wpa_connect 0 ssid wpa 1234567890 1			//16进制
+	wpa_connect 0 ssid wpa2 1234567890 0			//asic，可省略0
+	wpa_connect 0 ssid wpa2 1234567890 1			//16进制
+	wpa_connect 0 ssid wpa+wpa2 1234567890 0		//asic，可省略0
+	wpa_connect 0 ssid wpa+wpa2 1234567890 1		//16进制
+	wpa_connect 0 ssid wep 1234567890			//16进制固定为10或26个字符
+	wpa_connect 0 ssid wep ""12345""			//asic长度固定为5或13个字符
+
+3.2 AP模式
+
+	set_macaddr 3A 2E 11 31 13 E1   //配置mac地址(如果模组自带MAC地址，则不需要配置）
+
+	shell命令启动hostapd参数含义及加密方式如下(ssid后的数字标志着是否隐藏SSID，1为隐藏，其他为不隐藏)：
+	start_hapd 信道 ssid 不隐藏 20/40M 加密方式 加密类型 密码
+	a) open: 				start_hapd 11 hi1131 0 [HT20] none
+	b) wpa & tkip: 				start_hapd 11 hi1131 0 [HT20] wpa tkip 123456789
+	c) wpa & aes: 				start_hapd 11 hi1131 0 [HT20] wpa aes 123456789
+	d) wpa & tkip+aes: 			start_hapd 11 hi1131 0 [HT20] wpa tkip+aes 123456789
+	e) wpa2 & tkip: 			start_hapd 11 hi1131 0 [HT20] wpa2 tkip 123456789
+	f) wpa2 & aes: 				start_hapd 11 hi1131 0 [HT20] wpa2 aes 123456789
+	g) wpa2 & tkip+aes:			start_hapd 11 hi1131 0 [HT20] wpa2 tkip+aes 123456789
+	h) wpa+wpa2& tkip:			start_hapd 11 hi1131 0 [HT20] wpa+wpa2 tkip 123456789
+	i) wpa+wpa2& aes: 			start_hapd 11 hi1131 0 [HT20] wpa+wpa2 aes 123456789
+	j) wpa+wpa2& tkip+aes: 		        start_hapd 11 hi1131 0 [HT20] wpa+wpa2 tkip+aes 123456789
+
+	stop_hapd 关闭AP模式
+
+
+
